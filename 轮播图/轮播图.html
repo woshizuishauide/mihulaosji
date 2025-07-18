@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+  }
+
+  #banner {
+    width: 800px;
+    height: 400px;
+    border: 2px solid black;
+    overflow: hidden;
+  }
+
+  .imagelist {
+    width: 3300px;
+    height: 400px;
+
+  }
+
+  .imagelist img {
+    width: 800px;
+    height: 400px;
+
+  }
+
+  .imagelist li {
+    float: left;
+
+  }
+</style>
+
+<body>
+  <div id="banner">
+    <ul class="imagelist">
+      <li></li> <img src="img/图片1.png" alt=""></li>
+      <li></li> <img src="img/图片2.png" alt=""></li>
+      <li></li> <img src="img/图片3.png" alt=""></li>
+      <li></li> <img src="img/图片4.png" alt=""></li>
+    </ul>
+  </div>
+  <script>
+    var imglist = document.getElementById('imglist');
+    var left = 0;
+    var timer;
+
+    function run() {
+      if (left <= -3300) {
+        left = 0;
+      }
+
+      // 使用 CSS transform 属性替代 marginLeft
+      imglist.style.transform = 'translateX(' + left + 'px)';
+
+      left -= 10;
+
+      // 使用 requestAnimationFrame 替代 setTimeout
+      timer = requestAnimationFrame(run);
+    }
+
+  </script>
+</body>
+
+</html>

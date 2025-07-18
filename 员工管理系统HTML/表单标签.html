@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>表单标签</title>
+</head>
+
+<body>
+  <!-- action；表单数据提交的URL地址
+   method；提交方式
+   get(默认）：表单数据会出现在url 后面，形式file:///D:/save?name=tom&age=18
+   post ：表单数据会在消息体或请求体中提交到服务器，形式file:///D:/save
+   get表单数据不会出现在url后面，但是可以提交到服务器，但是get方式提交数据长度有限制，post方式没有长度限制
+   -->
+  表单项想要采集数据，必须得设置name属性，表示当前表单项的名字-->
+  <form action="/save" method="post">
+    姓名：<input type="text" name="name">
+    年龄：<input type="text" name="age">
+    <input type="submit" value="提交"></input>
+  </form>
+</body>
+
+</html>
